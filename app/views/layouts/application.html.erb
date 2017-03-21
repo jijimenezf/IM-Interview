@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="imlearningapp">
 <head>
   <title>Interview</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-controller="MainController">
+    <div class="row">
+    	<div class="col-md-6 col-md-offset-3">
+    		<ui-view></ui-view>
+    	</div>
+    </div>
 
-<%= yield %>
+    <script type="text/ng-template" id="/home.html">
+    	<div class="page-header">
+    		<h1>eLearning interview</h1>
+    	</div>
+    	<div>{{notFound}}</div>
+    </script>
+
+	<%= yield %>
 
 </body>
 </html>

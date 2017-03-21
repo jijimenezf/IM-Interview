@@ -26,6 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #use rest-client gem for calls to the shaky api
 gem 'rest-client'
 
+#add angular gem
+gem 'angular-rails-templates'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

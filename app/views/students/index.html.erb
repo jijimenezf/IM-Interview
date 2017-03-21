@@ -1,15 +1,25 @@
 <h1>Listing students</h1>
-
-<table>
+<table class="table table-bordered" ng-init="init('<%= @students.to_json %>')">
   <tr>
-    <th>Name</th>
-    <th>FavoriteMovie</th>
+    <th>Name 
+      <button ng-click="sortbyname(false)" type="button" class="btn btn-default btn-sm pull-right">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </button>
+      <button ng-click="sortbyname(true)" type="button" class="btn btn-default btn-sm pull-right">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </button>
+    </th>
+    <th>Favorite Movie
+      <button ng-click="sortbymovie(false)" type="button" class="btn btn-default btn-sm pull-right">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </button>
+      <button ng-click="sortbymovie(true)" type="button" class="btn btn-default btn-sm pull-right">
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      </button>
+    </th>
   </tr>
-
-  <% @students.each do |student| %>
-    <tr>
-      <td><%= student.name %></td>
-      <td><%= student.movie %></td>
+    <tr ng-repeat="student in students">
+      <td>{{student.firstname}}</td>
+      <td>{{student.favoritemovie}}</td>
     </tr>
-  <% end %>
 </table>
